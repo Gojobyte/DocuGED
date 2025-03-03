@@ -8,6 +8,7 @@ public class DocuGedApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DocuGedApplication.class, args);
+
 	}
 
 }
