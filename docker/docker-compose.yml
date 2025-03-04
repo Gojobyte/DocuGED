@@ -1,0 +1,32 @@
+services:
+  postgresdb:
+    container_name: postgrecontainer
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresvolume:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  pgadmin:
+    container_name: pgadmincontainer
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "7000:80"  # pgAdmin écoute sur 80 en interne
+    volumes:
+      - pgadminvolume:/var/lib/pgadmin
+
+volumes:
+  pgadminvolume:
+  postgresvolume:
