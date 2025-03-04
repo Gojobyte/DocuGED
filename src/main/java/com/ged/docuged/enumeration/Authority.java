@@ -1,6 +1,10 @@
 package com.ged.docuged.enumeration;
 
+
+
 import static com.ged.docuged.constant.Constants.*;
+
+
 
 public enum Authority {
 
@@ -18,4 +22,5 @@ public enum Authority {
     public String getValue() {
         return this.value;
     }
+
 }

@@ -2,6 +2,7 @@ package com.ged.docuged.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.ged.docuged.enumeration.Authority;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -18,6 +19,6 @@ import lombok.*;
 public class RoleEntity extends Auditable{
 
     private String name;
-    private String authorities;
+    private Authority authorities;
 
 }
