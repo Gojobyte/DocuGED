@@ -10,8 +10,8 @@ import lombok.Setter;
 import java.util.Map;
 
 @Getter
-@Setter@AllArgsConstructor
-
+@Setter
+@AllArgsConstructor
 public class UserEvent {
     private UserEntity user;
     private EventType type;

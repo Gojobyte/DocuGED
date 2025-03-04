@@ -3,8 +3,8 @@ package com.GED.DocuGed.service.Impl;
 import com.GED.DocuGed.exception.ApiException;
 import com.GED.DocuGed.service.EmailService;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
@@ -22,9 +22,9 @@ public class EmailServiceImpl implements EmailService {
     public static final String NEW_USER_ACCOUNT_VERIFICATION = "New User Account Verification";
     public static final String PASSWORD_RESET_REQUEST = "Reset Password Request ";
     private final JavaMailSender sender;
-    @Value("${spring.mail.verify.host}")
+    @Value(("${VERIFY_EMAIL_HOST}"))
     private String host;
-    @Value("${spring.mail.username")
+    @Value("${EMAIL_ID}")
     private String fromEmail;
 
     @Override
